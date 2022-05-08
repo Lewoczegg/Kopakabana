@@ -39,7 +39,6 @@ public class MainMenu extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == refeere_button)
 		{
-			System.out.println("Button clicked");
 			referee_panel.setVisible(true);
 		}
 		

@@ -2,15 +2,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Referee_panel extends JPanel implements ActionListener{
 	
-	private ArrayList<Referee> referee_list = new ArrayList<Referee>();
+	Referee_Menager referee_Menager = new Referee_Menager();
 	JButton add_referee_button;
 	JButton remove_referee_button;
 	JButton show_referee_button;
@@ -56,7 +56,6 @@ public class Referee_panel extends JPanel implements ActionListener{
 		this.add(show_referee_button);
 		this.add(back_button);
 		
-		System.out.println("ok");
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -66,43 +65,28 @@ public class Referee_panel extends JPanel implements ActionListener{
 		}
 		if(e.getSource() == add_referee_button)
 		{
-			add_referee();
+			try {
+				referee_Menager.add_referee();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if(e.getSource() == remove_referee_button)
 		{
-			remove_referee();
+			try {
+				referee_Menager.remove_referee();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		if(e.getSource() == show_referee_button)
 		{
-			show_referee();
+			referee_Menager.show_referee();
 		}
 		
 	}
-	private void add_referee()
-	{
-		String first_name = JOptionPane.showInputDialog("Enter first name of a referee");
-		String last_name = JOptionPane.showInputDialog("Enter last name of a referee");
-		int age = Integer.parseInt(JOptionPane.showInputDialog("Enter age of a referee"));
-		referee_list.add(new Referee(first_name, last_name, age));
-	}
-	private void show_referee()
-	{
-		StringBuilder list = new StringBuilder();
-		for(int i = 0; i < referee_list.size(); i++)
-		{
-			list.append(i+1 + ". " + referee_list.get(i).getFirst_name() + " " + referee_list.get(i).getLast_name() + " " + referee_list.get(i).getAge() + "\n");
-		}
-		JOptionPane.showMessageDialog(null, list, "List", JOptionPane.PLAIN_MESSAGE);
-	}
-	private void remove_referee()
-	{
-		StringBuilder list = new StringBuilder();
-		for(int i = 0; i < referee_list.size(); i++)
-		{
-			list.append(i+1 + ". " + referee_list.get(i).getFirst_name() + " " + referee_list.get(i).getLast_name() + " " + referee_list.get(i).getAge() + "\n");
-		}
-		int choice = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of a referee you want to remove: \n" + list));
-		referee_list.remove(choice - 1);
-	}
+	
 	
 }
