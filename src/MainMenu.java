@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
 
 public class MainMenu extends JFrame implements ActionListener{
 	
@@ -17,6 +18,10 @@ public class MainMenu extends JFrame implements ActionListener{
 		refeere_button.setFocusable(false);
 		refeere_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
 		
+		layeredPane.setBounds(0, 0, 800, 600);
+		layeredPane.add(refeere_button, Integer.valueOf(0));
+		layeredPane.add(referee_panel, Integer.valueOf(1));
+		this.add(layeredPane);
 		this.setLayout(null);
 		this.setTitle("Kopakabana"); //sets title of frame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of application
@@ -25,10 +30,8 @@ public class MainMenu extends JFrame implements ActionListener{
 		this.setVisible(true); //make frame visible
 		this.setIconImage(logo.getImage()); //change icon of frame
 		this.getContentPane().setBackground(new Color(141, 132, 227)); //change color of background
-		this.add(refeere_button);
-		this.add(referee_panel);
 	}
-	
+	JLayeredPane layeredPane = new JLayeredPane();
 	Referee_panel referee_panel = new Referee_panel();
 	ImageIcon logo = new ImageIcon("logo.jpg");
 	JButton refeere_button;
