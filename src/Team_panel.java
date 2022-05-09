@@ -2,12 +2,15 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 public class Team_panel extends JPanel implements ActionListener{
 	
+	Team_Manager team_Manager = new Team_Manager();
 	JButton add_team_button;
 	JButton remove_team_button;
 	JButton show_team_button;
@@ -57,6 +60,28 @@ public class Team_panel extends JPanel implements ActionListener{
 		if(e.getSource() == back_button)
 		{
 			this.setVisible(false);
+		}
+		if(e.getSource() == add_team_button)
+		{
+			try {
+				team_Manager.add_team();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		if(e.getSource() == show_team_button)
+		{
+			team_Manager.show_team();
+		}
+		if(e.getSource() == remove_team_button)
+		{
+			try {
+				team_Manager.remove_team();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 		
 	}

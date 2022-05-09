@@ -44,7 +44,6 @@ public class Referee_Menager {
 	{
 		PrintWriter write_to_file = new PrintWriter("referee.txt");
 		StringBuilder list = new StringBuilder();
-		StringBuilder list_to_write = new StringBuilder();
 		for(int i = 0; i < referee_list.size(); i++)
 		{
 			list.append(i+1 + ". " + referee_list.get(i).getFirst_name() + " " + referee_list.get(i).getLast_name() + " " + referee_list.get(i).getAge() + "\n");
@@ -53,9 +52,9 @@ public class Referee_Menager {
 		referee_list.remove(choice - 1);
 		for(int i = 0; i < referee_list.size(); i++)
 		{
-			list_to_write.setLength(0);
-			list_to_write.append(referee_list.get(i).getFirst_name() + " " + referee_list.get(i).getLast_name() + " " + referee_list.get(i).getAge() + "\n");
-			write_to_file.print(list_to_write);
+			list.setLength(0);
+			list.append(referee_list.get(i).getFirst_name() + " " + referee_list.get(i).getLast_name() + " " + referee_list.get(i).getAge() + "\n");
+			write_to_file.print(list);
 		}
 		write_to_file.close();
 	}
