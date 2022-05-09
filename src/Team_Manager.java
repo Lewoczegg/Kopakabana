@@ -182,6 +182,7 @@ public class Team_Manager {
 		}
 		JOptionPane.showMessageDialog(null, list, "List", JOptionPane.PLAIN_MESSAGE);
 	}
+	
 	public void remove_team() throws FileNotFoundException
 	{
 		PrintWriter write_to_file = new PrintWriter("teams.txt");
@@ -204,5 +205,10 @@ public class Team_Manager {
 			write_to_file.print(list);
 		}
 		write_to_file.close();
+	}
+	
+	public int teamSize()
+	{
+		return team_list.size();
 	}
 }

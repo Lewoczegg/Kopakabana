@@ -58,4 +58,9 @@ public class Referee_Menager {
 		}
 		write_to_file.close();
 	}
+	
+	public int number_of_referees()
+	{
+		return referee_list.size();
+	}
 }
