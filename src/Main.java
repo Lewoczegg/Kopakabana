@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		System.out.println("Sawicki chuj");
+		System.out.println("Kopakabana");
 		Referee_Menager referee_menager = new Referee_Menager();
 		File refereeFile = new File("referee.txt");
 		Scanner fileScanner = new Scanner(refereeFile);
