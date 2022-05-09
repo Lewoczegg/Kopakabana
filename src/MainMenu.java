@@ -18,9 +18,18 @@ public class MainMenu extends JFrame implements ActionListener{
 		refeere_button.setFocusable(false);
 		refeere_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
 		
+		team_button = new JButton();
+		team_button.setBounds(250, 150, 300, 50);
+		team_button.addActionListener(this);
+		team_button.setText("MENAGEMENT OF TEAMS");
+		team_button.setFocusable(false);
+		team_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
+		
 		layeredPane.setBounds(0, 0, 800, 600);
 		layeredPane.add(refeere_button, Integer.valueOf(0));
+		layeredPane.add(team_button, Integer.valueOf(0));
 		layeredPane.add(referee_panel, Integer.valueOf(1));
+		layeredPane.add(team_panel, Integer.valueOf(1));
 		this.add(layeredPane);
 		this.setLayout(null);
 		this.setTitle("Kopakabana"); //sets title of frame
@@ -33,8 +42,9 @@ public class MainMenu extends JFrame implements ActionListener{
 	}
 	JLayeredPane layeredPane = new JLayeredPane();
 	Referee_panel referee_panel = new Referee_panel();
+	Team_panel team_panel = new Team_panel();
 	ImageIcon logo = new ImageIcon("logo.jpg");
-	JButton refeere_button;
+	JButton refeere_button, team_button;
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == refeere_button)
@@ -42,6 +52,10 @@ public class MainMenu extends JFrame implements ActionListener{
 			referee_panel.setVisible(true);
 		}
 		
+		if(e.getSource() == team_button)
+		{
+			team_panel.setVisible(true);
+		}
 	}
 	
 	
