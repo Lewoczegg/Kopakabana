@@ -2,6 +2,7 @@
 public class Team {
 	private String name;
 	private Player player1, player2, player3, player4, player5, player6;
+	private int wins;
 	
 	Team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6)
 	{
@@ -12,6 +13,7 @@ public class Team {
 		this.player4=player4;
 		this.player5=player5;
 		this.player6=player6;
+		this.wins=0;
 	}
 	
 	public String getName() {
@@ -40,6 +42,15 @@ public class Team {
 	
 	public Player getPlayer6() {
 		return player6;
+	}
+	
+	public int getWins() {
+		return wins;
+	}
+	
+	public void setWins(int x)
+	{
+		this.wins = x;
 	}
 	
 }
