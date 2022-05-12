@@ -211,4 +211,9 @@ public class Team_Manager {
 	{
 		return team_list.size();
 	}
+	
+	public Team getTeam(int index)
+	{
+		return team_list.get(index);
+	}
 }

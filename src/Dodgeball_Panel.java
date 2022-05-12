@@ -10,6 +10,7 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 	
 	JButton next_match_button;
 	JButton scoreboard_button;
+	Tournament_Handler_Dodgeball tournament_handler = new Tournament_Handler_Dodgeball();
 	
 	Dodgeball_Panel()
 	{
@@ -36,7 +37,9 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		if(e.getSource() == next_match_button)
+		{
+			tournament_handler.nextMatch();
+		}
 	}
 }
