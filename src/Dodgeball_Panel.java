@@ -41,5 +41,9 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 		{
 			tournament_handler.nextMatch();
 		}
+		if(e.getSource() == scoreboard_button)
+		{
+			tournament_handler.scoreboard();
+		}
 	}
 }

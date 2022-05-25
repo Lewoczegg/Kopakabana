@@ -44,13 +44,13 @@ public class Team {
 		return player6;
 	}
 	
-	public int getWins() {
+	public Integer getWins() {
 		return wins;
 	}
 	
-	public void setWins(int x)
+	public void addWin()
 	{
-		this.wins = x;
+		this.wins++;
 	}
 	
 }
