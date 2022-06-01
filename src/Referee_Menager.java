@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -62,5 +63,14 @@ public class Referee_Menager {
 	public int number_of_referees()
 	{
 		return referee_list.size();
+	}
+	
+	public String RandomReferee()
+	{
+		Random random = new Random();
+		int x = random.nextInt(referee_list.size());
+		String random_ref;
+		random_ref = referee_list.get(x).getFirst_name() + " " + referee_list.get(x).getLast_name();
+		return random_ref;
 	}
 }

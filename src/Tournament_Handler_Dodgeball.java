@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Tournament_Handler_Dodgeball {
 	
 	Team_Manager team_manager = new Team_Manager();
+	Referee_Menager referee_manager = new Referee_Menager();
 	private ArrayList<Team> scorelist = new ArrayList<Team>();
 	private int number_of_matches;
 	private int number_of_teams;
@@ -33,7 +34,7 @@ public class Tournament_Handler_Dodgeball {
 			j = i + 1;
 		}
 		String[] responses = {team_manager.getTeam(i).getName(), team_manager.getTeam(j).getName()};
-		int choice = JOptionPane.showOptionDialog(null, "Choose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
 		if(choice == 0)
 		{
 			team_manager.getTeam(i).addWin();
@@ -45,22 +46,42 @@ public class Tournament_Handler_Dodgeball {
 		System.out.println(choice);
 		j++;
 		number_of_matches--;
+		Collections.sort(scorelist, new Comparator<Team>()
+		{
+			public int compare(Team t1, Team t2)
+			{
+				return Integer.valueOf((t2.getWins()).compareTo(t1.getWins()));
+			}
+		});
 	}
 	void scoreboard()
 	{
-		Collections.sort(scorelist, new Comparator<Team>()
-				{
-					public int compare(Team t1, Team t2)
-					{
-						return Integer.valueOf((t2.getWins()).compareTo(t1.getWins()));
-					}
-				});
 		StringBuilder list = new StringBuilder();
 		for(int i = 0; i < scorelist.size(); i++)
 		{
 			list.append(i+1 + ". " + scorelist.get(i).getName() + " Wins: " + scorelist.get(i).getWins() + "\n");
 		}
 		JOptionPane.showMessageDialog(null, list, "Scoreboard", JOptionPane.PLAIN_MESSAGE);
+	}
+	int matches_left()
+	{
+		return number_of_matches;
+	}
+	String getFirst()
+	{
+		return scorelist.get(0).getName();
+	}
+	String getSecond()
+	{
+		return scorelist.get(1).getName();
+	}
+	String getThird()
+	{
+		return scorelist.get(2).getName();
+	}
+	String getFourth()
+	{
+		return scorelist.get(3).getName();
 	}
 	
 }
