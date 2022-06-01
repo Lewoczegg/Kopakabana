@@ -12,6 +12,8 @@ public class Tournament_Handler_Dodgeball {
 	private int number_of_matches;
 	private int number_of_teams;
 	private int i, j;
+	String semi1;
+	String semi2;
 	
 	
 	Tournament_Handler_Dodgeball()
@@ -62,6 +64,61 @@ public class Tournament_Handler_Dodgeball {
 			list.append(i+1 + ". " + scorelist.get(i).getName() + " Wins: " + scorelist.get(i).getWins() + "\n");
 		}
 		JOptionPane.showMessageDialog(null, list, "Scoreboard", JOptionPane.PLAIN_MESSAGE);
+	}
+	
+	int first_semifinal()
+	{
+		String[] responses = {getFirst(), getThird()};
+		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		if(choice == 0)
+		{
+			semi1 = getFirst();
+		}
+		else
+		{
+			semi1 = getThird();
+		}
+		return choice;
+	}
+	int second_semifinal()
+	{
+		String[] responses = {getSecond(), getFourth()};
+		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		if(choice == 0)
+		{
+			semi2 = getSecond();
+		}
+		else
+		{
+			semi2 = getFourth();
+		}
+		return choice;
+	}
+	String finale()
+	{
+		String[] responses = {semi1, semi2};
+		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		if(choice == 0)
+		{
+			return semi1;
+		}
+		else
+		{
+			return semi2;
+		}
+	}
+	void reset()
+	{
+		System.out.println("ok");
+		scorelist.removeAll(scorelist);
+		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
+		i = 0;
+		j = 1;
+		for(int k = 0; k < team_manager.teamSize(); k++)
+		{
+			scorelist.add(team_manager.getTeam(k));
+			scorelist.get(k).resetWin();
+		}
 	}
 	int matches_left()
 	{

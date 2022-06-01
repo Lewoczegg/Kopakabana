@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,7 +14,8 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 	JButton scoreboard_button;
 	JButton start_finals_button;
 	JButton final_button;
-	JLabel team1, team2, team3, team4;
+	JLabel team1, team2, team3, team4, semi1, semi2, winner;
+	int round = 1;
 	Tournament_Handler_Dodgeball tournament_handler = new Tournament_Handler_Dodgeball();
 	
 	Dodgeball_Panel()
@@ -52,26 +54,41 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 		team2 = new JLabel();
 		team3 = new JLabel();
 		team4 = new JLabel();
+		semi1 = new JLabel();
+		semi2 = new JLabel();
+		winner = new JLabel();
 		
 		team1.setVisible(false);
 		team2.setVisible(false);
 		team3.setVisible(false);
 		team4.setVisible(false);
+		semi1.setVisible(false);
+		semi2.setVisible(false);
+		winner.setVisible(true);
 		
 		team1.setBounds(80, 100, 300, 100);
 		team2.setBounds(80, 325, 300, 100);
 		team3.setBounds(550, 100, 300, 100);
 		team4.setBounds(550, 325, 300, 100);
+		semi1.setBounds(150, 212, 300, 100);
+		semi2.setBounds(500, 212, 300, 100);
+		winner.setBounds(225, 20, 500, 100);
 		
 		team1.setForeground(Color.GREEN);
 		team2.setForeground(Color.GREEN);
 		team3.setForeground(Color.GREEN);
 		team4.setForeground(Color.GREEN);
+		semi1.setForeground(Color.GREEN);
+		semi2.setForeground(Color.GREEN);
+		winner.setForeground(Color.GREEN);
 		
 		team1.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		team2.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		team3.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		team4.setFont(new Font("Comic Sans", Font.BOLD, 25));
+		semi1.setFont(new Font("Comic Sans", Font.BOLD, 25));
+		semi2.setFont(new Font("Comic Sans", Font.BOLD, 25));
+		winner.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		
 		
 		this.setBackground(new Color(141, 132, 227));
@@ -86,6 +103,9 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 		this.add(team2);
 		this.add(team3);
 		this.add(team4);
+		this.add(semi1);
+		this.add(semi2);
+		this.add(winner);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -108,15 +128,74 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 			scoreboard_button.setVisible(false);
 			start_finals_button.setVisible(false);
 			team1.setText(tournament_handler.getFirst());
-			team2.setText(tournament_handler.getSecond());
-			team3.setText(tournament_handler.getThird());
+			team2.setText(tournament_handler.getThird());
+			team3.setText(tournament_handler.getSecond());
 			team4.setText(tournament_handler.getFourth());
 			team1.setVisible(true);
 			team2.setVisible(true);
 			team3.setVisible(true);
 			team4.setVisible(true);
 			final_button.setVisible(true);
-
 		}
+		if(e.getSource() == final_button)
+		{
+			if(round == 4)
+			{
+				this.setVisible(false);
+				round = 1;
+				team1.setVisible(false);
+				team2.setVisible(false);
+				team3.setVisible(false);
+				team4.setVisible(false);
+				semi1.setVisible(false);
+				semi2.setVisible(false);
+				winner.setVisible(false);
+				final_button.setText("SEMI-FINAL");
+				final_button.setVisible(false);
+				next_match_button.setVisible(true);
+				scoreboard_button.setVisible(true);
+				start_finals_button.setVisible(true);
+				start_finals_button.setEnabled(false);
+				next_match_button.setEnabled(true);
+			}
+			else if(round == 3)
+			{
+				winner.setText("Winner: " + tournament_handler.finale());
+				winner.setVisible(true);
+				final_button.setText("BACK");
+				round++;
+			}
+			else if(round == 2)
+			{
+				if(tournament_handler.second_semifinal() == 0)
+				{
+					semi2.setText(tournament_handler.getSecond());
+				}
+				else
+				{
+					semi2.setText(tournament_handler.getFourth());
+				}
+				semi2.setVisible(true);
+				round++;
+				final_button.setText("Final");
+			}
+			else if(round == 1)
+			{
+				if(tournament_handler.first_semifinal() == 0)
+				{
+					semi1.setText(tournament_handler.getFirst());
+				}
+				else
+				{
+					semi1.setText(tournament_handler.getThird());
+				}
+				semi1.setVisible(true);
+				round++;
+			}	
+		}
+	}
+	public void reset()
+	{
+		tournament_handler.reset();
 	}
 }

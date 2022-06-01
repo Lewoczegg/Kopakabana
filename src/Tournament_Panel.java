@@ -91,7 +91,8 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 			}
 			else
 			{
-				dodgeball_panel.setVisible(true);				
+				dodgeball_panel.setVisible(true);
+				((Dodgeball_Panel) dodgeball_panel).reset();
 			}
 		}
 		if(e.getSource() == tug_of_war_button)

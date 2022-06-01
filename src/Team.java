@@ -52,5 +52,9 @@ public class Team {
 	{
 		this.wins++;
 	}
+	public void resetWin()
+	{
+		this.wins = 0;
+	}
 	
 }
