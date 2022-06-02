@@ -2,7 +2,7 @@
 public class Team {
 	private String name;
 	private Player player1, player2, player3, player4, player5, player6;
-	private int wins;
+	private int wins, dodgeball_wins, volleyball_wins, tugOfWar_wins, trophies;
 	
 	Team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6)
 	{
@@ -14,6 +14,10 @@ public class Team {
 		this.player5=player5;
 		this.player6=player6;
 		this.wins=0;
+		dodgeball_wins = 0;
+		volleyball_wins = 0;
+		tugOfWar_wins = 0;
+		trophies = 0;
 	}
 	
 	public String getName() {
@@ -44,6 +48,22 @@ public class Team {
 		return player6;
 	}
 	
+	public Integer DodgeballWins() {
+		return dodgeball_wins;
+	}
+	
+	public Integer VolleyballWins() {
+		return volleyball_wins;
+	}
+	
+	public Integer TugOfWarWins() {
+		return tugOfWar_wins;
+	}
+	
+	public Integer Trophies() {
+		return trophies;
+	}
+	
 	public Integer getWins() {
 		return wins;
 	}
@@ -51,6 +71,22 @@ public class Team {
 	public void addWin()
 	{
 		this.wins++;
+	}
+	public void adddodgeballWin()
+	{
+		this.dodgeball_wins++;
+	}
+	public void addvolleyballWin()
+	{
+		this.volleyball_wins++;
+	}
+	public void addtugofwarWin()
+	{
+		this.tugOfWar_wins++;
+	}
+	public void addtrophyWin()
+	{
+		this.trophies++;
 	}
 	public void resetWin()
 	{
