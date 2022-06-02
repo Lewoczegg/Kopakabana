@@ -103,7 +103,8 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 			}
 			else
 			{
-				tug_of_war_panel.setVisible(true);				
+				tug_of_war_panel.setVisible(true);	
+				((Tug_Of_War_Panel) tug_of_war_panel).reset();
 			}
 		}
 	}

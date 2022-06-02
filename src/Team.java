@@ -56,5 +56,16 @@ public class Team {
 	{
 		this.wins = 0;
 	}
+	public Team getCopy()
+	{
+		Player player1c = new Player(player1.getFirst_name(), player1.getLast_name(), player1.getNumber());
+		Player player2c = new Player(player2.getFirst_name(), player2.getLast_name(), player2.getNumber());
+		Player player3c = new Player(player3.getFirst_name(), player3.getLast_name(), player3.getNumber());
+		Player player4c = new Player(player4.getFirst_name(), player4.getLast_name(), player4.getNumber());
+		Player player5c = new Player(player5.getFirst_name(), player5.getLast_name(), player5.getNumber());
+		Player player6c = new Player(player6.getFirst_name(), player6.getLast_name(), player6.getNumber());
+		Team teamc = new Team(this.name, player1c, player2c, player3c, player4c, player5c, player6c);
+		return teamc;
+	}
 	
 }

@@ -178,7 +178,7 @@ public class Team_Manager {
 		StringBuilder list = new StringBuilder();
 		for(int i = 0; i < team_list.size(); i++)
 		{
-			list.append(i+1 + ". " + team_list.get(i).getName() + "\n");
+			list.append(i+1 + ". " + team_list.get(i).getName() + team_list.get(i).getWins() +"\n");
 		}
 		JOptionPane.showMessageDialog(null, list, "List", JOptionPane.PLAIN_MESSAGE);
 	}
@@ -205,6 +205,15 @@ public class Team_Manager {
 			write_to_file.print(list);
 		}
 		write_to_file.close();
+	}
+	public ArrayList<Team> getCopy()
+	{
+		ArrayList<Team> team_list_copy = new ArrayList<Team>();
+		for(int i = 0; i < team_list.size(); i++)
+		{
+			team_list_copy.add(team_list.get(i).getCopy());
+		}
+		return team_list_copy;
 	}
 	
 	public int teamSize()

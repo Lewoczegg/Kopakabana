@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 import javax.swing.JOptionPane;
 
-public class Tournament_Handler_Dodgeball {
+public class Tournament_Handler_TugOfWar {
 	
 	Team_Manager team_manager = new Team_Manager();
 	Referee_Menager referee_manager = new Referee_Menager();
@@ -16,7 +16,7 @@ public class Tournament_Handler_Dodgeball {
 	String semi2;
 	
 	
-	Tournament_Handler_Dodgeball()
+	Tournament_Handler_TugOfWar()
 	{
 		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
 		number_of_teams = team_manager.teamSize();
@@ -169,7 +169,6 @@ public class Tournament_Handler_Dodgeball {
 	}
 	void reset()
 	{
-		System.out.println("ok");
 		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
 		i = 0;
 		j = 1;
