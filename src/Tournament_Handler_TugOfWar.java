@@ -57,7 +57,6 @@ public class Tournament_Handler_TugOfWar {
 				}
 			}
 		}
-		System.out.println(choice);
 		j++;
 		number_of_matches--;
 		Collections.sort(scorelist, new Comparator<Team>()

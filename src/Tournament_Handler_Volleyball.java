@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 import javax.swing.JOptionPane;
 
-public class Tournament_Handler_Dodgeball {
-	
+public class Tournament_Handler_Volleyball {
+
 	Team_Manager team_manager = new Team_Manager();
 	Referee_Menager referee_manager = new Referee_Menager();
 	private ArrayList<Team> scorelist;
@@ -14,9 +14,8 @@ public class Tournament_Handler_Dodgeball {
 	private int i, j;
 	String semi1;
 	String semi2;
-	
-	
-	Tournament_Handler_Dodgeball()
+
+	Tournament_Handler_Volleyball()
 	{
 		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
 		number_of_teams = team_manager.teamSize();
@@ -32,7 +31,32 @@ public class Tournament_Handler_Dodgeball {
 			j = i + 1;
 		}
 		String[] responses = {team_manager.getTeam(i).getName(), team_manager.getTeam(j).getName()};
-		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		String referee1, referee2, referee3;
+		referee1 = referee_manager.RandomReferee();
+		while(true)
+		{
+			referee2 = referee_manager.RandomReferee();
+			if(!referee2.equals(referee1))
+			{
+				break;
+			}
+		}
+		while(true)
+		{
+			referee3 = referee_manager.RandomReferee();
+			if(!referee3.equals(referee1) && !referee3.equals(referee2))
+			{
+				break;
+			}
+		}
+		int choice = JOptionPane.showOptionDialog(null,
+				"Main referee: " + referee1 + "\nAssistant referee: " + referee2 + "\nAssistant referee: " + referee3 + "\nChoose team to win",
+				"Match",
+				JOptionPane.YES_NO_OPTION,
+				JOptionPane.INFORMATION_MESSAGE,
+				null,
+				responses,
+				0);
 		if(choice == 0)
 		{
 			team_manager.getTeam(i).addWin();
@@ -193,5 +217,11 @@ public class Tournament_Handler_Dodgeball {
 	{
 		return scorelist.get(3).getName();
 	}
+	
+	
+	
+	
+	
+	
 	
 }

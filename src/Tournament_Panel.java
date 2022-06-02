@@ -81,6 +81,7 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 			else
 			{
 				volleyball_panel.setVisible(true);
+				((Volleyball_Panel) volleyball_panel).reset();
 			}
 		}
 		if(e.getSource() == dodgeball_button)
