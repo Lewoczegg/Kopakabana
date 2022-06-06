@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import Logic.Referee_Menager;
 
 public class Tournament_Panel extends JPanel implements ActionListener{
 	

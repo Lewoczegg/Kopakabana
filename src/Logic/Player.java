@@ -1,4 +1,4 @@
-
+package Logic;
 public class Player {
 	private String first_name;
 	private String last_name;

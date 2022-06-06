@@ -1,3 +1,4 @@
+package Logic;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -15,7 +16,7 @@ public class Tournament_Handler_Volleyball {
 	String semi1;
 	String semi2;
 
-	Tournament_Handler_Volleyball()
+	public Tournament_Handler_Volleyball()
 	{
 		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
 		number_of_teams = team_manager.teamSize();
@@ -23,7 +24,7 @@ public class Tournament_Handler_Volleyball {
 		j = 1;
 	}
 	
-	void nextMatch()
+	public void nextMatch()
 	{
 		if(j >= number_of_teams)
 		{
@@ -93,7 +94,7 @@ public class Tournament_Handler_Volleyball {
 			}
 		});
 	}
-	void scoreboard()
+	public void scoreboard()
 	{
 		StringBuilder list = new StringBuilder();
 		for(int i = 0; i < scorelist.size(); i++)
@@ -103,7 +104,7 @@ public class Tournament_Handler_Volleyball {
 		JOptionPane.showMessageDialog(null, list, "Scoreboard", JOptionPane.PLAIN_MESSAGE);
 	}
 	
-	int first_semifinal()
+	public int first_semifinal()
 	{
 		String[] responses = {getFirst(), getThird()};
 		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
@@ -135,7 +136,7 @@ public class Tournament_Handler_Volleyball {
 		}
 		return choice;
 	}
-	int second_semifinal()
+	public int second_semifinal()
 	{
 		String[] responses = {getSecond(), getFourth()};
 		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
@@ -167,7 +168,7 @@ public class Tournament_Handler_Volleyball {
 		}
 		return choice;
 	}
-	String finale()
+	public String finale()
 	{
 		String[] responses = {semi1, semi2};
 		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
@@ -200,30 +201,30 @@ public class Tournament_Handler_Volleyball {
 			return semi2;
 		}
 	}
-	void reset()
+	public void reset()
 	{
 		number_of_matches = (team_manager.teamSize() * (team_manager.teamSize() - 1)) / 2;
 		i = 0;
 		j = 1;
 		scorelist = new ArrayList<Team>(team_manager.getCopy());
 	}
-	int matches_left()
+	public int matches_left()
 	{
 		return number_of_matches;
 	}
-	String getFirst()
+	public String getFirst()
 	{
 		return scorelist.get(0).getName();
 	}
-	String getSecond()
+	public String getSecond()
 	{
 		return scorelist.get(1).getName();
 	}
-	String getThird()
+	public String getThird()
 	{
 		return scorelist.get(2).getName();
 	}
-	String getFourth()
+	public String getFourth()
 	{
 		return scorelist.get(3).getName();
 	}

@@ -1,4 +1,4 @@
-
+package Logic;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Referee_Menager {
 
-	Referee_Menager()
+	public Referee_Menager()
 	{
 
 	}

@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -6,6 +7,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import Logic.Tournament_Handler_TugOfWar;
 
 public class Tug_Of_War_Panel extends JPanel implements ActionListener{
 	

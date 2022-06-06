@@ -1,6 +1,9 @@
+package Logic;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import GUI.MainMenu;
 
 public class Main {
 

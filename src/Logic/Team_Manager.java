@@ -1,3 +1,4 @@
+package Logic;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,7 +12,7 @@ public class Team_Manager {
 	private String last_name;
 	private int number;
 
-	Team_Manager() 
+	public Team_Manager() 
 	{
 		
 	}

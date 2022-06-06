@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -7,6 +8,8 @@ import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import Logic.Referee_Menager;
 
 public class Referee_panel extends JPanel implements ActionListener{
 	

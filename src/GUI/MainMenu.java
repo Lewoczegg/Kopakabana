@@ -1,3 +1,4 @@
+package GUI;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -9,9 +10,11 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 
+import Logic.Team_Manager;
+
 public class MainMenu extends JFrame implements ActionListener{
 	
-	MainMenu() {
+	public MainMenu() {
 		refeere_button = new JButton();
 		refeere_button.setBounds(250, 75, 300, 50);
 		refeere_button.addActionListener(this);
