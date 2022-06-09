@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 
+import Logic.SaveFiles;
 import Logic.Team_Manager;
 
 public class MainMenu extends JFrame implements ActionListener{
@@ -36,10 +38,18 @@ public class MainMenu extends JFrame implements ActionListener{
 		tournament_button.setFocusable(false);
 		tournament_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
 		
+		save_and_exit_button = new JButton();
+		save_and_exit_button.setBounds(250, 300, 300, 50);
+		save_and_exit_button.addActionListener(this);
+		save_and_exit_button.setText("SAVE AND EXIT");
+		save_and_exit_button.setFocusable(false);
+		save_and_exit_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
+		
 		layeredPane.setBounds(0, 0, 800, 600);
 		layeredPane.add(refeere_button, Integer.valueOf(0));
 		layeredPane.add(team_button, Integer.valueOf(0));
 		layeredPane.add(tournament_button, Integer.valueOf(0));
+		layeredPane.add(save_and_exit_button, Integer.valueOf(0));
 		layeredPane.add(referee_panel, Integer.valueOf(1));
 		layeredPane.add(team_panel, Integer.valueOf(1));
 		layeredPane.add(tournament_panel, Integer.valueOf(1));
@@ -59,8 +69,9 @@ public class MainMenu extends JFrame implements ActionListener{
 	Team_panel team_panel = new Team_panel();
 	Tournament_Panel tournament_panel = new Tournament_Panel();
 	ImageIcon logo = new ImageIcon("logo.jpg");
-	JButton refeere_button, team_button, tournament_button;
+	JButton refeere_button, team_button, tournament_button, save_and_exit_button;
 	Team_Manager team_manager = new Team_Manager();
+	SaveFiles saver = new SaveFiles();
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == refeere_button)
@@ -81,6 +92,15 @@ public class MainMenu extends JFrame implements ActionListener{
 			else
 			{
 				tournament_panel.setVisible(true);
+			}
+		}
+		if(e.getSource() == save_and_exit_button)
+		{
+			try {
+				saver.save();
+				System.exit(ABORT);
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
 		}
 		

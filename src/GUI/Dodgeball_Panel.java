@@ -76,13 +76,13 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 		semi2.setBounds(500, 212, 300, 100);
 		winner.setBounds(225, 20, 500, 100);
 		
-		team1.setForeground(Color.GREEN);
-		team2.setForeground(Color.GREEN);
-		team3.setForeground(Color.GREEN);
-		team4.setForeground(Color.GREEN);
-		semi1.setForeground(Color.GREEN);
-		semi2.setForeground(Color.GREEN);
-		winner.setForeground(Color.GREEN);
+		team1.setForeground(Color.BLACK);
+		team2.setForeground(Color.BLACK);
+		team3.setForeground(Color.BLACK);
+		team4.setForeground(Color.BLACK);
+		semi1.setForeground(Color.BLACK);
+		semi2.setForeground(Color.BLACK);
+		winner.setForeground(Color.BLACK);
 		
 		team1.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		team2.setFont(new Font("Comic Sans", Font.BOLD, 25));
