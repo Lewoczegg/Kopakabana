@@ -18,11 +18,11 @@ public class MainMenu extends JFrame implements ActionListener{
 	
 	public MainMenu() {
 		refeere_button = new JButton();
-		refeere_button.setBounds(250, 75, 300, 50);
-		refeere_button.addActionListener(this);
-		refeere_button.setText("MENAGEMENT OF REFEREES");
-		refeere_button.setFocusable(false);
-		refeere_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
+		refeere_button.setBounds(250, 75, 300, 50); 					//x , y, width, height
+		refeere_button.addActionListener(this);							//adds ActionListener to the button
+		refeere_button.setText("MENAGEMENT OF REFEREES");				//sets text of a button
+		refeere_button.setFocusable(false);								//removes border from the button's text					
+		refeere_button.setFont(new Font("Comic Sans", Font.BOLD, 15));  //sets font of a text
 		
 		team_button = new JButton();
 		team_button.setBounds(250, 150, 300, 50);
@@ -46,16 +46,16 @@ public class MainMenu extends JFrame implements ActionListener{
 		save_and_exit_button.setFont(new Font("Comic Sans", Font.BOLD, 15));
 		
 		layeredPane.setBounds(0, 0, 800, 600);
-		layeredPane.add(refeere_button, Integer.valueOf(0));
+		layeredPane.add(refeere_button, Integer.valueOf(0));       
 		layeredPane.add(team_button, Integer.valueOf(0));
 		layeredPane.add(tournament_button, Integer.valueOf(0));
 		layeredPane.add(save_and_exit_button, Integer.valueOf(0));
 		layeredPane.add(referee_panel, Integer.valueOf(1));
 		layeredPane.add(team_panel, Integer.valueOf(1));
-		layeredPane.add(tournament_panel, Integer.valueOf(1));
+		layeredPane.add(tournament_panel, Integer.valueOf(1));		//the higher Integer.valueOf(x) the higher it is in the hierarchy
 		
 		this.add(layeredPane);
-		this.setLayout(null);
+		this.setLayout(null); //using fixed positions
 		this.setTitle("Kopakabana"); //sets title of frame
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //exit out of application
 		this.setResizable(false); //prevent frame from being resized
@@ -73,7 +73,7 @@ public class MainMenu extends JFrame implements ActionListener{
 	Team_Manager team_manager = new Team_Manager();
 	SaveFiles saver = new SaveFiles();
 	
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e){
 		if(e.getSource() == refeere_button)
 		{
 			referee_panel.setVisible(true);
@@ -87,7 +87,10 @@ public class MainMenu extends JFrame implements ActionListener{
 		{
 			if(team_manager.teamSize() < 4)
 			{
-				JOptionPane.showMessageDialog(null, "There must be at least 4 teams to start a tournament", "Info", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+						"There must be at least 4 teams to start a tournament",
+						"Info",
+						JOptionPane.PLAIN_MESSAGE);
 			}
 			else
 			{
@@ -102,11 +105,6 @@ public class MainMenu extends JFrame implements ActionListener{
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
-		}
-		
+		}	
 	}
-	
-	
-
-
 }

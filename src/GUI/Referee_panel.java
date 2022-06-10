@@ -68,21 +68,11 @@ public class Referee_panel extends JPanel implements ActionListener{
 		}
 		if(e.getSource() == add_referee_button)
 		{
-			try {
 				referee_Menager.add_referee();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		}
 		if(e.getSource() == remove_referee_button)
 		{
-			try {
 				referee_Menager.remove_referee();
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		}
 		if(e.getSource() == show_referee_button)
 		{

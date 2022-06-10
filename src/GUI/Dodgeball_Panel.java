@@ -66,7 +66,7 @@ public class Dodgeball_Panel extends JPanel implements ActionListener{
 		team4.setVisible(false);
 		semi1.setVisible(false);
 		semi2.setVisible(false);
-		winner.setVisible(true);
+		winner.setVisible(false);
 		
 		team1.setBounds(80, 100, 300, 100);
 		team2.setBounds(80, 325, 300, 100);

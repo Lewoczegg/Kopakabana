@@ -19,6 +19,22 @@ public class Team {
 		tugOfWar_wins = 0;
 		trophies = 0;
 	}
+	Team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6,
+			int wins, int dodgeball_wins, int volleyball_wins, int tugOfWar_wins, int trophies)
+	{
+		this.name=name;
+		this.player1 = player1;
+		this.player2 = player2;
+		this.player3 = player3;
+		this.player4 = player4;
+		this.player5 = player5;
+		this.player6 = player6;
+		this.wins = wins;
+		this.dodgeball_wins = dodgeball_wins;
+		this.volleyball_wins = volleyball_wins;
+		this.tugOfWar_wins = tugOfWar_wins;
+		this.trophies = trophies;
+	}
 	
 	public String getName() {
 		return name;

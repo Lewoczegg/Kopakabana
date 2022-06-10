@@ -66,7 +66,7 @@ public class Team_panel extends JPanel implements ActionListener{
 		back_button2.setVisible(false);
 		
 		label_left = new JLabel();
-		label_left.setBounds(20,0, 200, 600);
+		label_left.setBounds(20, 0, 200, 600);
 		label_left.setVisible(false);
 		label_left.setText("<html>Name: <br/><br/>"
 				+ "Player1: <br/><br/>"
@@ -149,18 +149,14 @@ public class Team_panel extends JPanel implements ActionListener{
 		{
 			this.setVisible(false);
 		}
+		
 		if(e.getSource() == add_team_button)
 		{
-			try {
-				team_Manager.add_team();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			team_Manager.add_team();
 		}
+		
 		if(e.getSource() == show_team_button)
 		{
-			//team_Manager.show_team();
 			back_button.setVisible(false);
 			add_team_button.setVisible(false);
 			show_team_button.setVisible(false);
@@ -173,19 +169,14 @@ public class Team_panel extends JPanel implements ActionListener{
 			back_button2.setVisible(true);
 			label_left.setVisible(true);
 			label_center.setVisible(true);
-			teams_ComboBox.setVisible(true);
-			
-			
+			teams_ComboBox.setVisible(true);	
 		}
+		
 		if(e.getSource() == remove_team_button)
 		{
-			try {
-				team_Manager.remove_team();
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			team_Manager.remove_team();
 		}
+		
 		if(e.getSource() == back_button2)
 		{
 			back_button2.setVisible(false);

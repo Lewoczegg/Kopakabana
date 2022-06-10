@@ -38,7 +38,7 @@ public class Tournament_Handler_Dodgeball {
 		if(choice == 0)
 		{
 			team_manager.getTeam(i).addWin();
-			team_manager.getTeam(i).addvolleyballWin();
+			team_manager.getTeam(i).adddodgeballWin();
 			for(int k = 0; k < scorelist.size(); k++)
 			{
 				if(team_manager.getTeam(i).getName() == scorelist.get(k).getName())
@@ -51,7 +51,7 @@ public class Tournament_Handler_Dodgeball {
 		else
 		{
 			team_manager.getTeam(j).addWin();
-			team_manager.getTeam(j).addvolleyballWin();
+			team_manager.getTeam(j).adddodgeballWin();
 			for(int k = 0; k < scorelist.size(); k++)
 			{
 				if(team_manager.getTeam(j).getName() == scorelist.get(k).getName())
@@ -93,7 +93,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi1)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					break;
 				}
 			}
@@ -106,7 +106,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi1)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					break;
 				}
 			}
@@ -125,7 +125,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi2)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					break;
 				}
 			}
@@ -138,7 +138,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi2)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					break;
 				}
 			}
@@ -156,7 +156,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi1)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					team_manager.getTeam(i).addtrophyWin();
 					break;
 				}
@@ -170,7 +170,7 @@ public class Tournament_Handler_Dodgeball {
 				if(team_manager.getTeam(i).getName() == semi2)
 				{
 					team_manager.getTeam(i).addWin();
-					team_manager.getTeam(i).addvolleyballWin();
+					team_manager.getTeam(i).adddodgeballWin();
 					team_manager.getTeam(i).addtrophyWin();
 					break;
 				}

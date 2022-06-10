@@ -51,7 +51,8 @@ public class Tournament_Handler_Volleyball {
 			}
 		}
 		int choice = JOptionPane.showOptionDialog(null,
-				"Main referee: " + referee1 + "\nAssistant referee: " + referee2 + "\nAssistant referee: " + referee3 + "\nChoose team to win",
+				"Main referee: " + referee1 + "\nAssistant referee: " + referee2 +
+				"\nAssistant referee: " + referee3 + "\nChoose team to win",
 				"Match",
 				JOptionPane.YES_NO_OPTION,
 				JOptionPane.INFORMATION_MESSAGE,
@@ -107,7 +108,14 @@ public class Tournament_Handler_Volleyball {
 	public int first_semifinal()
 	{
 		String[] responses = {getFirst(), getThird()};
-		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		int choice = JOptionPane.showOptionDialog(null,
+					 "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win",
+					 "Match",
+					 JOptionPane.YES_NO_OPTION,
+					 JOptionPane.INFORMATION_MESSAGE,
+					 null,
+					 responses,
+					 0);
 		if(choice == 0)
 		{
 			semi1 = getFirst();
@@ -171,7 +179,14 @@ public class Tournament_Handler_Volleyball {
 	public String finale()
 	{
 		String[] responses = {semi1, semi2};
-		int choice = JOptionPane.showOptionDialog(null, "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win", "Match", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, responses, 0);
+		int choice = JOptionPane.showOptionDialog(null,
+				     "Referee: " + referee_manager.RandomReferee() + "\nChoose team to win",
+				     "Match",
+				     JOptionPane.YES_NO_OPTION,
+				     JOptionPane.INFORMATION_MESSAGE,
+				     null,
+				     responses,
+				     0);
 		if(choice == 0)
 		{
 			for(int i = 0; i < team_manager.teamSize(); i++)

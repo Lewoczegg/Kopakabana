@@ -79,7 +79,10 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 		{
 			if(referee_menager.number_of_referees() < 3)
 			{
-				JOptionPane.showMessageDialog(null, "There must be at least 3 referees to start a volleyball tournament", "Info", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null,
+											  "There must be at least 3 referees to start a volleyball tournament",
+											  "Info",
+											  JOptionPane.PLAIN_MESSAGE);
 			}
 			else
 			{

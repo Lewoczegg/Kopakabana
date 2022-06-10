@@ -1,7 +1,6 @@
-
-SpartaAugutow Mateusz Okragly 7 Bartek Wasilewski 10 Alex Trum 43 Bartosz Kucharski 8 Maksymilian Kwiatkowski 9 Filip Wojciechowski 1
-PromienMonki Patryk Pawelko 5 Arek Gnidziejko 2 Eryk Wojtkielewicz 7 Jakub Bocian 8 Norbert Andrzejewski 9 Cyprian Piotrowski 45
-Legia Artur Bouruc 1 Benjamin Verbic 10 Pawel Wszolek 7 Yuri Ribeiro 8 Malik Nawrocki 9 Lindsay Rose 45
-Cracovia Virgil Gihta 5 Kamil Pestka 2 Sergiu Hanca 7 Jakub Myszor 8 Matej Rodin 9 Lukas Hrosso 45
-Warta Frank Castaneda 5 Adam Zrelak 2 Jayson Papeau 7 Bartosz Kieliba 8 Jan Grzesik 9 Marcin Szeibe 45
-MazurElk Jakub Marchel 20 Adam Bujno 19 Oskar Kowalski 20 Szymon Sobol 22 Juliusz Oran 29 Ola Dec 33
+SpartaAugutow Mateusz Okragly 7 Bartek Wasilewski 10 Alex Trum 43 Bartosz Kucharski 8 Maksymilian Kwiatkowski 9 Filip Wojciechowski 1 8 0 3 5 1
+PromienMonki Patryk Pawelko 5 Arek Gnidziejko 2 Eryk Wojtkielewicz 7 Jakub Bocian 8 Norbert Andrzejewski 9 Cyprian Piotrowski 45 5 0 2 3 0
+Legia Artur Bouruc 1 Benjamin Verbic 10 Pawel Wszolek 7 Yuri Ribeiro 8 Malik Nawrocki 9 Lindsay Rose 45 6 0 3 3 0
+Cracovia Virgil Gihta 5 Kamil Pestka 2 Sergiu Hanca 7 Jakub Myszor 8 Matej Rodin 9 Lukas Hrosso 45 3 0 1 2 0
+Warta Frank Castaneda 5 Adam Zrelak 2 Jayson Papeau 7 Bartosz Kieliba 8 Jan Grzesik 9 Marcin Szeibe 45 9 0 6 3 1
+MazurElk Jakub Marchel 20 Adam Bujno 19 Oskar Kowalski 20 Szymon Sobol 22 Juliusz Oran 29 Ola Dec 33 5 0 3 2 0
