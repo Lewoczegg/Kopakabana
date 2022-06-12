@@ -4,7 +4,8 @@ public class Team {
 	private Player player1, player2, player3, player4, player5, player6;
 	private int wins, dodgeball_wins, volleyball_wins, tugOfWar_wins, trophies;
 	
-	Team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6)
+	Team(String name, Player player1, Player player2, Player player3,
+		 Player player4, Player player5, Player player6)
 	{
 		this.name=name;
 		this.player1=player1;
@@ -19,8 +20,9 @@ public class Team {
 		tugOfWar_wins = 0;
 		trophies = 0;
 	}
-	Team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6,
-			int wins, int dodgeball_wins, int volleyball_wins, int tugOfWar_wins, int trophies)
+	Team(String name, Player player1, Player player2, Player player3,
+		 Player player4, Player player5, Player player6,
+		 int wins, int dodgeball_wins, int volleyball_wins, int tugOfWar_wins, int trophies)
 	{
 		this.name=name;
 		this.player1 = player1;
@@ -36,78 +38,42 @@ public class Team {
 		this.trophies = trophies;
 	}
 	
-	public String getName() {
-		return name;
-	}
+	public String getName() { return name; }
 	
-	public Player getPlayer1() {
-		return player1;
-	}
+	public Player getPlayer1() { return player1; }
 	
-	public Player getPlayer2() {
-		return player2;
-	}
+	public Player getPlayer2() { return player2; }
 	
-	public Player getPlayer3() {
-		return player3;
-	}
+	public Player getPlayer3() { return player3; }
 	
-	public Player getPlayer4() {
-		return player4;
-	}
+	public Player getPlayer4() { return player4; }
 	
-	public Player getPlayer5() {
-		return player5;
-	}
+	public Player getPlayer5() { return player5; }
 	
-	public Player getPlayer6() {
-		return player6;
-	}
+	public Player getPlayer6() { return player6; }
 	
-	public Integer DodgeballWins() {
-		return dodgeball_wins;
-	}
+	public Integer DodgeballWins() { return dodgeball_wins; }
 	
-	public Integer VolleyballWins() {
-		return volleyball_wins;
-	}
+	public Integer VolleyballWins() { return volleyball_wins; }
 	
-	public Integer TugOfWarWins() {
-		return tugOfWar_wins;
-	}
+	public Integer TugOfWarWins() { return tugOfWar_wins; }
 	
-	public Integer Trophies() {
-		return trophies;
-	}
+	public Integer Trophies() { return trophies; }
 	
-	public Integer getWins() {
-		return wins;
-	}
+	public Integer getWins() { return wins; }
 	
-	public void addWin()
-	{
-		this.wins++;
-	}
-	public void adddodgeballWin()
-	{
-		this.dodgeball_wins++;
-	}
-	public void addvolleyballWin()
-	{
-		this.volleyball_wins++;
-	}
-	public void addtugofwarWin()
-	{
-		this.tugOfWar_wins++;
-	}
-	public void addtrophyWin()
-	{
-		this.trophies++;
-	}
-	public void resetWin()
-	{
-		this.wins = 0;
-	}
+	public void addWin() { this.wins++; }
+	
+	public void adddodgeballWin() { this.dodgeball_wins++; }
+	
+	public void addvolleyballWin() { this.volleyball_wins++; }
+	
+	public void addtugofwarWin() { this.tugOfWar_wins++; }
+	
+	public void addtrophyWin() { this.trophies++; }
+	
+	public void resetWin() { this.wins = 0; }
+	
 	public Team getCopy()
 	{
 		Player player1c = new Player(player1.getFirst_name(), player1.getLast_name(), player1.getNumber());

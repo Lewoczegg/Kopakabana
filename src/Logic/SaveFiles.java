@@ -7,10 +7,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class SaveFiles {
-	public SaveFiles()
-	{
-		
-	}
+	
+	public SaveFiles() {}
+	
 	Referee_Menager referee_menager = new Referee_Menager();
 	Team_Manager team_manager = new Team_Manager();
 	
@@ -19,16 +18,14 @@ public class SaveFiles {
 		FileWriter writer = new FileWriter("referee.txt");
 		FileWriter writer2 = new FileWriter("teams.txt");
 		
-		for(int i = 0; i < referee_menager.number_of_referees(); i++)
-		{
+		for(int i = 0; i < referee_menager.number_of_referees(); i++){
 			writer.write(referee_menager.getList().get(i).getFirst_name()
 						 + " " + referee_menager.getList().get(i).getLast_name()
 						 + " " + referee_menager.getList().get(i).getAge() + "\n");			
 		}
 		writer.close();
 		
-		for(int i = 0; i < team_manager.teamSize(); i++)
-		{
+		for(int i = 0; i < team_manager.teamSize(); i++){
 			writer2.write(team_manager.getTeam(i).getName()
 			  + " " + team_manager.getTeam(i).getPlayer1().getFirst_name() + " " + team_manager.getTeam(i).getPlayer1().getLast_name() + " " + team_manager.getTeam(i).getPlayer1().getNumber()
 			  + " " + team_manager.getTeam(i).getPlayer2().getFirst_name() + " " + team_manager.getTeam(i).getPlayer2().getLast_name() + " " + team_manager.getTeam(i).getPlayer2().getNumber()
@@ -51,8 +48,7 @@ public class SaveFiles {
 		Scanner refereeScanner = new Scanner(refereeFile);
 		Scanner teamScanner = new Scanner(teamsFile);
 		
-		while(refereeScanner.hasNext())
-		{
+		while(refereeScanner.hasNext()){
 			String first_name = refereeScanner.next();
 			String last_name = refereeScanner.next();
 			int age = Integer.parseInt(refereeScanner.next());
@@ -60,8 +56,7 @@ public class SaveFiles {
 		}
 		refereeScanner.close();
 		
-		while(teamScanner.hasNext())
-		{
+		while(teamScanner.hasNext()){
 			String team_name = teamScanner.next();
 			Player player1 = new Player(teamScanner.next(), teamScanner.next(), Integer.parseInt(teamScanner.next()));
 			Player player2 = new Player(teamScanner.next(), teamScanner.next(), Integer.parseInt(teamScanner.next()));
