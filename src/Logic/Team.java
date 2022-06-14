@@ -14,7 +14,7 @@ public class Team {
 		this.player4=player4;
 		this.player5=player5;
 		this.player6=player6;
-		this.wins=0;
+		wins=0;
 		dodgeball_wins = 0;
 		volleyball_wins = 0;
 		tugOfWar_wins = 0;

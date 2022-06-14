@@ -5,7 +5,7 @@ public class Player {
 	private String last_name;
 	private int number;
 	
-	Player(String first_name, String last_name, int number){
+	public Player(String first_name, String last_name, int number){
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.number = number;

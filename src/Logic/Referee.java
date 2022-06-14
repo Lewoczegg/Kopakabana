@@ -6,7 +6,7 @@ public class Referee {
 	private String last_name;
 	private int age;
 	
-	Referee(String first_name, String last_name, int age){
+	public Referee(String first_name, String last_name, int age){
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.age = age;

@@ -139,7 +139,7 @@ public class Team_Manager {
 	}
 	
 	public void add_team(String name, Player player1, Player player2, Player player3, Player player4, Player player5, Player player6,
-			int wins, int dodgeball_wins, int volleyball_wins, int tugOfWar_wins, int trophies)
+						 int wins, int dodgeball_wins, int volleyball_wins, int tugOfWar_wins, int trophies)
 	{
 		team_list.add(new Team(name, player1, player2, player3, player4, player5, player6,
 				wins, dodgeball_wins, volleyball_wins, tugOfWar_wins, trophies));

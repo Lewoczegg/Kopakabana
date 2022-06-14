@@ -10,8 +10,8 @@ public class SaveFiles {
 	
 	public SaveFiles() {}
 	
-	Referee_Menager referee_menager = new Referee_Menager();
-	Team_Manager team_manager = new Team_Manager();
+	private Referee_Menager referee_menager = new Referee_Menager();
+	private Team_Manager team_manager = new Team_Manager();
 	
 	public void save() throws IOException
 	{
@@ -27,16 +27,31 @@ public class SaveFiles {
 		
 		for(int i = 0; i < team_manager.teamSize(); i++){
 			writer2.write(team_manager.getTeam(i).getName()
-			  + " " + team_manager.getTeam(i).getPlayer1().getFirst_name() + " " + team_manager.getTeam(i).getPlayer1().getLast_name() + " " + team_manager.getTeam(i).getPlayer1().getNumber()
-			  + " " + team_manager.getTeam(i).getPlayer2().getFirst_name() + " " + team_manager.getTeam(i).getPlayer2().getLast_name() + " " + team_manager.getTeam(i).getPlayer2().getNumber()
-			  + " " + team_manager.getTeam(i).getPlayer3().getFirst_name() + " " + team_manager.getTeam(i).getPlayer3().getLast_name() + " " + team_manager.getTeam(i).getPlayer3().getNumber()
-			  + " " + team_manager.getTeam(i).getPlayer4().getFirst_name() + " " + team_manager.getTeam(i).getPlayer4().getLast_name() + " " + team_manager.getTeam(i).getPlayer4().getNumber()
-			  + " " + team_manager.getTeam(i).getPlayer5().getFirst_name() + " " + team_manager.getTeam(i).getPlayer5().getLast_name() + " " + team_manager.getTeam(i).getPlayer5().getNumber()
-			  + " " + team_manager.getTeam(i).getPlayer6().getFirst_name() + " " + team_manager.getTeam(i).getPlayer6().getLast_name() + " " + team_manager.getTeam(i).getPlayer6().getNumber()
-			  + " " + team_manager.getTeam(i).getWins() + " " + team_manager.getTeam(i).DodgeballWins() + " " + team_manager.getTeam(i).VolleyballWins() + " " + team_manager.getTeam(i).TugOfWarWins() + " " + team_manager.getTeam(i).Trophies() + "\n");
+			  + " " + team_manager.getTeam(i).getPlayer1().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer1().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer1().getNumber()
+			  + " " + team_manager.getTeam(i).getPlayer2().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer2().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer2().getNumber()
+			  + " " + team_manager.getTeam(i).getPlayer3().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer3().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer3().getNumber()
+			  + " " + team_manager.getTeam(i).getPlayer4().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer4().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer4().getNumber()
+			  + " " + team_manager.getTeam(i).getPlayer5().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer5().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer5().getNumber()
+			  + " " + team_manager.getTeam(i).getPlayer6().getFirst_name() 
+			  + " " + team_manager.getTeam(i).getPlayer6().getLast_name() 
+			  + " " + team_manager.getTeam(i).getPlayer6().getNumber()
+			  + " " + team_manager.getTeam(i).getWins() 
+			  + " " + team_manager.getTeam(i).DodgeballWins() 
+			  + " " + team_manager.getTeam(i).VolleyballWins() 
+			  + " " + team_manager.getTeam(i).TugOfWarWins() 
+			  + " " + team_manager.getTeam(i).Trophies() + "\n");
 		}
 		writer2.close();
-		
 		
 	}
 	
@@ -74,6 +89,5 @@ public class SaveFiles {
 		}
 		teamScanner.close();
 	}
-	
-	
+		
 }
