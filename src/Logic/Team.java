@@ -74,8 +74,7 @@ public class Team {
 	
 	public void resetWin() { this.wins = 0; }
 	
-	public Team getCopy()
-	{
+	public Team getCopy(){
 		Player player1c = new Player(player1.getFirst_name(), player1.getLast_name(), player1.getNumber());
 		Player player2c = new Player(player2.getFirst_name(), player2.getLast_name(), player2.getNumber());
 		Player player3c = new Player(player3.getFirst_name(), player3.getLast_name(), player3.getNumber());

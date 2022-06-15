@@ -94,7 +94,9 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 		{
 			if(referee_menager.number_of_referees() < 1)
 			{
-				JOptionPane.showMessageDialog(null, "There must be at least one referee to start a dodgeball tournament", "Info", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, "There must be at least one referee to start a dodgeball tournament",
+											  "Info", 
+											  JOptionPane.PLAIN_MESSAGE); 
 			}
 			else
 			{
@@ -106,7 +108,9 @@ public class Tournament_Panel extends JPanel implements ActionListener{
 		{
 			if(referee_menager.number_of_referees() < 1)
 			{
-				JOptionPane.showMessageDialog(null, "There must be at least one referee to start a tug of war tournament", "Info", JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, "There must be at least one referee to start a tug of war tournament",
+											  "Info", 
+											  JOptionPane.PLAIN_MESSAGE);
 			}
 			else
 			{

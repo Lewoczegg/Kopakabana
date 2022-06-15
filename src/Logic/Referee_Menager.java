@@ -1,8 +1,5 @@
 package Logic;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -40,17 +37,17 @@ public class Referee_Menager {
 	
 	public void remove_referee()
 	{
-			StringBuilder list = new StringBuilder();
-			for(int i = 0; i < referee_list.size(); i++)
-			{
-				list.append(i+1 + ". "
-							+ referee_list.get(i).getFirst_name()
-							+ " " + referee_list.get(i).getLast_name()
-							+ " " + referee_list.get(i).getAge() + "\n");
-			}
-			int choice = Integer.parseInt(JOptionPane.showInputDialog
-						("Enter the number of a referee you want to remove: \n" + list));
-			referee_list.remove(choice - 1);
+		StringBuilder list = new StringBuilder();
+		for(int i = 0; i < referee_list.size(); i++)
+		{
+			list.append(i+1 + ". "
+						+ referee_list.get(i).getFirst_name()
+						+ " " + referee_list.get(i).getLast_name()
+						+ " " + referee_list.get(i).getAge() + "\n");
+		}
+		int choice = Integer.parseInt(JOptionPane.showInputDialog
+					("Enter the number of a referee you want to remove: \n" + list));
+		referee_list.remove(choice - 1);
 	}
 	
 	public int number_of_referees(){ return referee_list.size(); }

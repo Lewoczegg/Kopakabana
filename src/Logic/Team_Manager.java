@@ -1,10 +1,6 @@
 package Logic;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Team_Manager {
@@ -145,8 +141,7 @@ public class Team_Manager {
 				wins, dodgeball_wins, volleyball_wins, tugOfWar_wins, trophies));
 	}
 	
-	public void remove_team()
-	{
+	public void remove_team(){
 		StringBuilder list = new StringBuilder();
 		for(int i = 0; i < team_list.size(); i++) {
 			list.append(i+1 + ". " + team_list.get(i).getName() + "\n");
@@ -155,8 +150,7 @@ public class Team_Manager {
 		team_list.remove(choice - 1);
 	}
 	
-	public ArrayList<Team> getCopy()
-	{
+	public ArrayList<Team> getCopy(){
 		ArrayList<Team> team_list_copy = new ArrayList<Team>();
 		for(int i = 0; i < team_list.size(); i++) {
 			team_list_copy.add(team_list.get(i).getCopy());
